@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Destructive & Warning Palette */
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  
+  /* Primary Oat Milk & Coffee Palette - 2026 Premium Aesthetic */
+  --color-espresso: #1A120B;      /* Deepest dark */
+  --color-mocha: #3C2A21;         /* Rich brown */
+  --color-coffee: #5A3E31;        /* Medium brown */
+  --color-latte: #D5B4B4;         /* Soft warm pinkish brown */
+  --color-oat: #E5E5CB;           /* Warm cream */
+  --color-cream: #F5F5F5;         /* Off-white */
+  --color-accent-gold: #C69749;   /* Premium accent */
+
+  /* Glassmorphism - Coffee Tinted */
+  --color-glass-dark: rgba(26, 18, 11, 0.7);
+  --color-glass-light: rgba(245, 245, 245, 0.1);
+  --color-glass-border-gold: rgba(198, 151, 73, 0.2);
+  --color-glass-border-white: rgba(255, 255, 255, 0.1);
+
+  /* Header Specific */
+  --header-height: 70px;
+  --header-height-scrolled: 60px;
+  --header-padding-desktop: 0 40px;
+  --header-padding-mobile: 0 15px;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@layer utilities {
+  .glass-header {
+    @apply bg-[var(--color-glass-dark)] backdrop-blur-xl border border-[var(--color-glass-border-gold)] shadow-[0_8px_32px_rgba(0,0,0,0.3)];
+  }
+  .glass-panel {
+    @apply bg-[var(--color-glass-dark)] backdrop-blur-md border border-[var(--color-glass-border-white)] shadow-xl;
+  }
+  .glass-card {
+    @apply bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden transition-all duration-300;
+  }
+  .glass-card:hover {
+    @apply border-[var(--color-accent-gold)] bg-black/60 shadow-[0_8px_32px_rgba(198,151,73,0.15)];
+  }
+  .text-gradient-coffee {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-oat)] to-[var(--color-accent-gold)];
+  }
+}
+
+:root {
+  --background: #110d0a; /* Dark warm base for 2026 aesthetics */
+  --foreground: #F5F5F5; /* Oat light */
+  --destructive: #7f1d1d;
+  --destructive-foreground: #fef2f2;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar for premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-mocha-base);
+  border-radius: 4px;
+}
+::--webkit-scrollbar-thumb:hover {
+  background: #5A3E31;
+}
+
+/* Hide ALL Next.js Dev Overlays (Turbopack 'N' logo, etc.) */
+nextjs-portal, 
+[data-nextjs-toast], 
+[data-nextjs-dialog],
+[class*="nextjs-"],
+[id*="nextjs-"],
+.nextjs-static-indicator-container {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}

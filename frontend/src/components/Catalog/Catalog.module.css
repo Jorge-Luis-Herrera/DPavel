@@ -1,0 +1,345 @@
+.shelfContainer {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.shelfHeader {
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+}
+
+.shelfTitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.75rem;
+  color: white;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.shelfWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.shelfRow {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+
+.shelfRow::-webkit-scrollbar {
+  display: none;
+}
+
+.shelfItem {
+  flex-shrink: 0;
+}
+
+/* Product Card */
+.productCard {
+  min-width: 240px;
+  height: 320px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+.productCardFeatured {
+  border: 1px solid var(--color-accent-gold-light);
+}
+
+.productBadges {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.badge {
+  padding: 0.4rem 0.8rem;
+  border-radius: 99px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 0.1em;
+}
+
+.badgeCombo { background: linear-gradient(135deg, #3C2A21, #C69749); }
+.badgeOferta { background: linear-gradient(135deg, #1A120B, #3C2A21); }
+.badgeBestSeller { background: #C69749; color: #110d0a; }
+
+.cardGlassOverlay {
+  background: linear-gradient(to top, rgba(17, 13, 10, 0.9) 20%, rgba(17, 13, 10, 0) 100%);
+  width: 100%;
+  padding: 1.5rem;
+  transition: 0.3s;
+}
+
+.productInfo h3 {
+  margin-bottom: 0.25rem;
+}
+
+/* Modal Styling */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 13, 10, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 1rem;
+}
+
+.modalContent3d {
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  position: relative;
+  overflow-y: auto;
+  border-radius: 32px;
+}
+
+.closeModal {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: var(--color-latte);
+  background: rgba(255,255,255,0.05);
+  border-radius: 50%;
+  padding: 0.5rem;
+  transition: 0.3s;
+  z-index: 10;
+}
+
+.modalBody {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .modalBody {
+    flex-direction: row;
+  }
+}
+
+.imageContainer3d {
+  position: relative;
+  flex: 1;
+  background: rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  cursor: zoom-in;
+}
+
+.mainImage3d {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 16px;
+}
+
+.clickHint {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(17, 13, 10, 0.7);
+  backdrop-filter: blur(8px);
+  padding: 0.6rem 1.2rem;
+  border-radius: 99px;
+  color: var(--color-accent-gold);
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  pointer-events: none;
+  border: 1px solid rgba(198, 151, 73, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.detailsSection {
+  flex: 1;
+  padding: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .detailsSection {
+    padding: 1.5rem;
+  }
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 480px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.stat {
+  background: rgba(255,255,255,0.03);
+  padding: 1rem;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.stat label {
+  display: block;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-latte);
+  margin-bottom: 0.25rem;
+  opacity: 0.5;
+}
+
+.stat span {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.quantitySelector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.quantitySelector button {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.quantitySelector input {
+  width: 30px;
+  background: transparent;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.actionBtn {
+  background: var(--color-accent-gold);
+  color: #110d0a;
+  padding: 1rem;
+  border-radius: 16px;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.actionBtn:hover {
+  background: #d4a55a;
+  transform: translateY(-2px);
+}
+
+/* Category Card */
+.categoryCard {
+  min-width: 180px;
+  height: 240px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.categoryGlassOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(17,13,10,0.8) 0%, transparent 60%);
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+}
+
+.categoryName {
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* Featured Shelf adjustments */
+.featuredShelf {
+  background: linear-gradient(135deg, rgba(60, 42, 33, 0.4), rgba(26, 18, 11, 0.4));
+  border: 1px solid rgba(198, 151, 73, 0.2);
+}
+
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.navBtn:hover {
+  background: var(--color-accent-gold);
+  color: #110d0a;
+}
+
+.prev { left: -1rem; }
+.next { right: -1rem; }
+
+.fullscreenImageOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20000;
+}
+
+.expandedImage {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.closeExpanded {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  color: white;
+}
