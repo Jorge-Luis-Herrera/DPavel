@@ -7,7 +7,6 @@ import Link from 'next/link';
 
 // Componentes de Gestión
 import ManageShelves from '@/components/Admin/ManageShelves';
-import ManageCategories from '@/components/Admin/ManageCategories';
 import ManageProducts from '@/components/Admin/ManageProducts';
 
 export default function AdminDashboard() {
