@@ -10,10 +10,7 @@ import { AuthModule } from './auth/auth.module';
     ConfigModule.forRoot({ isGlobal: true }),
     // Frontend estático (producción)
     ServeStaticModule.forRoot({
-      rootPath:
-        process.env.NODE_ENV === 'production'
-          ? join(__dirname, '..', 'client')
-          : join(__dirname, '..', '..', 'dist'),
+      rootPath: join(__dirname, '..', 'client'),
       exclude: ['/api/(.*)', '/uploads/(.*)'],
     }),
     AuthModule,

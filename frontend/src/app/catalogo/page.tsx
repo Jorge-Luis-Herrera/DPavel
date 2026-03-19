@@ -4,8 +4,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import Header from '@/components/Header/Header';
 import ShelfRow from '@/components/Catalog/ShelfRow';
 import { motion, AnimatePresence } from 'framer-motion';
-
-const API_URL = 'http://localhost:3000/api';
+import { API_URL } from '@/lib/config';
 
 export default function CatalogoPage() {
   const [inventario, setInventario] = useState<any[]>([]);

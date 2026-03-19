@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 
-const API_URL = 'http://localhost:3000/api';
+import { API_URL, STATIC_URL } from '@/lib/config';
 
 const initialProducts = [
   {

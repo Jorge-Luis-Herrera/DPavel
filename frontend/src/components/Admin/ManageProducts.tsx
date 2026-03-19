@@ -3,8 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { Trash2, Plus, AlertCircle, CheckCircle2, Image as ImageIcon, Edit2, X, ShoppingBag } from 'lucide-react';
 
-const API_URL = 'http://localhost:3000/api';
-const STATIC_URL = 'http://localhost:3000/uploads/';
+import { API_URL, STATIC_URL } from '@/lib/config';
 
 const ManageProducts = () => {
     const [shelves, setShelves] = useState<any[]>([]);

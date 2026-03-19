@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { X, ShoppingCart, Maximize2 } from 'lucide-react';
+import { X, ShoppingCart, Maximize2, Eye, Expand } from 'lucide-react';
+import { STATIC_URL } from '@/lib/config';
 import styles from './Catalog.module.css';
 
 const API_URL = 'http://localhost:3000'; // Default backend URL

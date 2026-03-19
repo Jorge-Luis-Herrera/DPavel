@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { Trash2, Plus, AlertCircle, CheckCircle2 } from 'lucide-react';
 
-const API_URL = 'http://localhost:3000/api';
+import { API_URL } from '@/lib/config';
 
 const ManageShelves = () => {
     const [shelves, setShelves] = useState<any[]>([]);
