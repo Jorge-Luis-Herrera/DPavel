@@ -37,25 +37,31 @@ export default function CatalogoPage() {
 
   const inventarioAMostrar = useMemo(() => {
     const lista = [];
+    const searchLower = busqueda.toLowerCase().trim();
 
-    // Fila de destacados si hay
-    if (!busqueda && destacados.length > 0) {
+    // Filtramos destacados si hay búsqueda
+    const destacadosFiltrados = destacados.filter((p: any) => {
+      if (!searchLower) return true;
+      return p.nombre.toLowerCase().includes(searchLower) || 
+             (p.descripcion && p.descripcion.toLowerCase().includes(searchLower));
+    });
+
+    if (destacadosFiltrados.length > 0) {
       lista.push({
         id: 'featured-shelf',
         titulo: 'Nuestras Joyas & Ofertas',
         subtitulo: 'SELECCIÓN EXCLUSIVA D\' PAVEL',
-        items: destacados,
+        items: destacadosFiltrados,
         isFeatured: true
       });
     }
 
     // Estanterías por productos
     inventario.forEach(shelf => {
-      const searchLower = busqueda.toLowerCase();
-      const shelfMatches = !busqueda || shelf.titulo.toLowerCase().includes(searchLower);
+      const shelfMatches = !searchLower || shelf.titulo.toLowerCase().includes(searchLower);
       
       const productosFiltrados = (shelf.productos || []).filter((p: any) => {
-        if (!busqueda || shelfMatches) return true;
+        if (!searchLower || shelfMatches) return true;
         return p.nombre.toLowerCase().includes(searchLower) || 
                (p.descripcion && p.descripcion.toLowerCase().includes(searchLower));
       });
