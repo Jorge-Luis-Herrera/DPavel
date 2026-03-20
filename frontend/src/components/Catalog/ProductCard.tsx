@@ -27,7 +27,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const [compraCantidad, setCompraCantidad] = useState(1);
 
   const fullImgUrl = imagenUrl
-    ? (imagenUrl.startsWith('http') ? imagenUrl : `${API_URL}/uploads/${imagenUrl}`)
+    ? (imagenUrl.startsWith('http') ? imagenUrl : `${STATIC_URL}${imagenUrl}`)
     : null;
 
   useEffect(() => {
