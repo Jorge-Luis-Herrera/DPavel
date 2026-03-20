@@ -5,7 +5,7 @@
 
 A premium artisanal cafeteria platform with an immersive user experience, glassmorphism design, and neuro-gastronomy inspired aesthetics.
 
-## 🚀 Features
+## Features
 
 - **Immersive Catalog**: Fluid product browsing with 3D-inspired interactions.
 - **Admin Dashboard**: Centralized management for shelves and inventory.
@@ -13,13 +13,13 @@ A premium artisanal cafeteria platform with an immersive user experience, glassm
 - **Sophisticated Design**: Premium gradients, micro-animations, and glassmorphism.
 - **Responsive**: Fully optimized for mobile and desktop experiences.
 
-## 🛠️ Stack
+## Stack
 
 - **Frontend**: Next.js 15, React 19, Framer Motion, Tailwind CSS, Lucide React.
 - **Backend**: NestJS, Node.js.
 - **Database**: JSON-based persistence (managed via Service layer).
 
-## 📦 Project Structure
+## Project Structure
 
 ```text
 DPavel/
@@ -27,7 +27,7 @@ DPavel/
 └── frontend/           # Next.js Application
 ```
 
-## 🏗️ Getting Started
+## Getting Started
 
 ### Backend
 ```bash
@@ -46,3 +46,4 @@ npm run dev
 ---
 
 *Crafted with precision for D'Pavel Coffee.*
+En el Portal de Azure: Crea un nuevo Web App (App Service).
